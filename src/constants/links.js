@@ -12,7 +12,7 @@ export default [
     text: "blog",
   },
   {
-    path: "/contract",
-    text: "contract",
+    path: "/contact",
+    text: "contact",
   },
 ]
