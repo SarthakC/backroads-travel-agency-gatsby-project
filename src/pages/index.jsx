@@ -5,6 +5,7 @@ import Layout from "../components/Layout/Layout"
 import SimpleHero from "../components/SimpleHero/SimpleHero"
 import Banner from "../components/Banner/Banner"
 import About from "../components/Home/About/About"
+import Services from "../components/Home/Services/Services"
 
 export default () => (
   <Layout>
@@ -19,5 +20,6 @@ export default () => (
       </Banner>
     </SimpleHero>
     <About />
+    <Services />
   </Layout>
 )
