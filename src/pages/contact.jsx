@@ -1,8 +1,27 @@
 import React from "react"
-import Layout from "../components/Layout/Layout"
+import { graphql } from "gatsby"
 
-const contact = () => {
-  return <Layout>contact</Layout>
+import Layout from "../components/Layout/Layout"
+import StyledHero from "../components/StyledHero/StyledHero"
+
+const contact = ({ data }) => {
+  return (
+    <Layout>
+      <StyledHero img={data.connectBcg.childImageSharp.fluid} />
+    </Layout>
+  )
 }
+
+export const query = graphql`
+  query {
+    connectBcg: file(relativePath: { eq: "connectBcg.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
 
 export default contact
