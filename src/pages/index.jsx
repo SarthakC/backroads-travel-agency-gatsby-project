@@ -7,6 +7,7 @@ import Banner from "../components/Banner/Banner"
 import About from "../components/Home/About/About"
 import Services from "../components/Home/Services/Services"
 import StyledHero from "../components/StyledHero/StyledHero"
+import FeaturedTours from "../components/Tours/FeaturedTours/FeaturedTours"
 
 export default ({ data }) => (
   <Layout>
@@ -22,6 +23,7 @@ export default ({ data }) => (
     </StyledHero>
     <About />
     <Services />
+    <FeaturedTours />
   </Layout>
 )
 
