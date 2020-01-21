@@ -1,6 +1,8 @@
 import React from "react"
 import styles from "./Banner.module.css"
 
+import PropTypes from "prop-types"
+
 const Banner = ({ title, info, children }) => {
   return (
     <div className={styles.banner}>
@@ -9,6 +11,12 @@ const Banner = ({ title, info, children }) => {
       {children}
     </div>
   )
+}
+
+Banner.propTypes = {
+  title: PropTypes.string.isRequired,
+  info: PropTypes.string.isRequired,
+  children: PropTypes.node,
 }
 
 export default Banner

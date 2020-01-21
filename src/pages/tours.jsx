@@ -3,11 +3,13 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/Layout/Layout"
 import StyledHero from "../components/StyledHero/StyledHero"
+import Tours from "../components/Tours/Tours/Tours"
 
 const tours = ({ data }) => {
   return (
     <Layout>
       <StyledHero img={data.defaultBcg.childImageSharp.fluid} />
+      <Tours />
     </Layout>
   )
 }

@@ -1,10 +1,10 @@
 import React from "react"
 import Image from "gatsby-image"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import { FaMap } from "react-icons/fa"
 
 import styles from "./TourCard.module.css"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const TourCard = ({ tour }) => {
   const { name, price, country, days, images, slug } = tour
