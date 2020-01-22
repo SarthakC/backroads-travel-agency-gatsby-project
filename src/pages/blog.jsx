@@ -1,16 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
+import PropTypes from "prop-types"
 
 import Layout from "../components/Layout/Layout"
 import StyledHero from "../components/StyledHero/StyledHero"
-
-const blog = ({ data }) => {
-  return (
-    <Layout>
-      <StyledHero img={data.blogBcg.childImageSharp.fluid} />
-    </Layout>
-  )
-}
 
 export const query = graphql`
   query {
@@ -23,5 +16,16 @@ export const query = graphql`
     }
   }
 `
+const blog = ({ data }) => {
+  return (
+    <Layout>
+      <StyledHero img={data.blogBcg.childImageSharp.fluid} />
+    </Layout>
+  )
+}
+
+blog.propTypes = {
+  data: PropTypes.object.isRequired,
+}
 
 export default blog

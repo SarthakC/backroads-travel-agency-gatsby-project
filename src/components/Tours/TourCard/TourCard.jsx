@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import Image from "gatsby-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
@@ -6,9 +7,7 @@ import { FaMap } from "react-icons/fa"
 
 import styles from "./TourCard.module.css"
 
-const TourCard = ({ tour }) => {
-  const { name, price, country, days, images, slug } = tour
-
+const TourCard = ({ tour: { name, price, country, days, images, slug } }) => {
   let mainImage = images[0].fluid
 
   return (
@@ -33,6 +32,10 @@ const TourCard = ({ tour }) => {
       </div>
     </article>
   )
+}
+
+TourCard.propTypes = {
+  tour: PropTypes.object.isRequired,
 }
 
 export default TourCard

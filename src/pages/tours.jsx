@@ -1,18 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
+import PropTypes from "prop-types"
 
 import Layout from "../components/Layout/Layout"
 import StyledHero from "../components/StyledHero/StyledHero"
 import Tours from "../components/Tours/Tours/Tours"
-
-const tours = ({ data }) => {
-  return (
-    <Layout>
-      <StyledHero img={data.defaultBcg.childImageSharp.fluid} />
-      <Tours />
-    </Layout>
-  )
-}
 
 export const query = graphql`
   query {
@@ -25,5 +17,18 @@ export const query = graphql`
     }
   }
 `
+
+const tours = ({ data }) => {
+  return (
+    <Layout>
+      <StyledHero img={data.defaultBcg.childImageSharp.fluid} />
+      <Tours />
+    </Layout>
+  )
+}
+
+tours.propTypes = {
+  data: PropTypes.object.isRequired,
+}
 
 export default tours

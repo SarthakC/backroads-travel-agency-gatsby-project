@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 import { TitleWrapper } from "./Title.styles"
 
@@ -11,6 +12,11 @@ const Title = ({ title, subtitle }) => {
       </h4>
     </TitleWrapper>
   )
+}
+
+Title.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
 }
 
 export default Title
