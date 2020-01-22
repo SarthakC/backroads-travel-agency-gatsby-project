@@ -22,7 +22,9 @@ const TourList = ({ tours: { edges } }) => {
 }
 
 TourList.propTypes = {
-  tours: PropTypes.object.isRequired,
+  tours: PropTypes.shape({
+    edges: PropTypes.arrayOf(PropTypes.PropTypes.object).isRequired,
+  }),
 }
 
 export default TourList

@@ -35,7 +35,13 @@ const TourCard = ({ tour: { name, price, country, days, images, slug } }) => {
 }
 
 TourCard.propTypes = {
-  tour: PropTypes.object.isRequired,
+  tour: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    days: PropTypes.number.isRequired,
+    images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }),
 }
 
 export default TourCard
