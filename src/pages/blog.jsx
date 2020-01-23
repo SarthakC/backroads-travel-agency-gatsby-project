@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 
 import Layout from "../components/Layout/Layout"
 import StyledHero from "../components/StyledHero/StyledHero"
+import BlogList from "../components/Blog/BlogList/BlogList"
 
 export const query = graphql`
   query {
@@ -20,6 +21,7 @@ const blog = ({ data }) => {
   return (
     <Layout>
       <StyledHero img={data.blogBcg.childImageSharp.fluid} />
+      <BlogList />
     </Layout>
   )
 }

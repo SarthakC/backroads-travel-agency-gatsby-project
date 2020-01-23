@@ -5,9 +5,9 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import { FaMoneyBillWave, FaMap } from "react-icons/fa"
 
-import Layout from "../components/Layout/Layout"
-import StyledHero from "../components/StyledHero/StyledHero"
-import Day from "../components/SingleTour/Day/Day.jsx"
+import Layout from "../../components/Layout/Layout"
+import StyledHero from "../../components/StyledHero/StyledHero.jsx"
+import Day from "../../components/SingleTour/Day/Day.jsx"
 
 import styles from "./template.module.css"
 
