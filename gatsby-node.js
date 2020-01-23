@@ -1,6 +1,9 @@
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const {
-    data: { tours, posts },
+    data: {
+      tours,
+      posts: { edges: postEdges },
+    },
   } = await graphql(`
     query {
       tours: allContentfulTour {
@@ -26,17 +29,35 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       component: require.resolve(
         `./src/templates/tour-template/tour-template.jsx`
       ),
-      context: { slug: slug },
+      context: { slug },
     })
   })
 
-  posts.edges.forEach(({ node: { slug } }) => {
+  postEdges.forEach(({ node: { slug } }) => {
     createPage({
       path: `blog/${slug}`,
       component: require.resolve(
         `./src/templates/blog-template/blog-template.jsx`
       ),
-      context: { slug: slug },
+      context: { slug },
+    })
+  })
+
+  const postPerPage = 5
+  const numPages = Math.ceil(postEdges.length / postPerPage)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blogs` : `/blogs/${i + 1}`,
+      component: require.resolve(
+        `./src/templates/blog-list-template/blog-list-template.jsx`
+      ),
+      context: {
+        limit: postPerPage,
+        skip: i * postPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
     })
   })
 }
