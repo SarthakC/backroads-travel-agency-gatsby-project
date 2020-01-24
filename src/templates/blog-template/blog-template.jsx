@@ -37,7 +37,7 @@ const Blog = ({
           },
         },
       }) => {
-        return <img src={file["en-US"].url} />
+        return <img src={file["en-US"].url} alt="" />
       },
       "embedded-entry-block": ({
         data: {

@@ -25,21 +25,20 @@ export const query = graphql`
 
 const index = ({ data }) => (
   <Layout>
-    <SEO pageTitle="Home">
-      <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
-        <Banner
-          title="Continue exploring"
-          info="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        >
-          <AniLink to="/tours" className="btn-white" fade>
-            explore tours
-          </AniLink>
-        </Banner>
-      </StyledHero>
-      <About />
-      <Services />
-      <FeaturedTours />
-    </SEO>
+    <SEO pageTitle="Home" />>
+    <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
+      <Banner
+        title="Continue exploring"
+        info="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      >
+        <AniLink to="/tours" className="btn-white" fade>
+          explore tours
+        </AniLink>
+      </Banner>
+    </StyledHero>
+    <About />
+    <Services />
+    <FeaturedTours />
   </Layout>
 )
 
