@@ -38,6 +38,14 @@ const BlogList = ({
   },
   pageContext: { currentPage, numPages },
 }) => {
+  const prevPage =
+    currentPage - 1 === 1 ? `/blogs/` : `/blogs/${currentPage - 1}`
+
+  const nextPage = `/blogs/${currentPage + 1}`
+
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+
   return (
     <Layout>
       <section className={styles.blog}>
@@ -48,6 +56,12 @@ const BlogList = ({
           })}
         </div>
         <section className={styles.links}>
+          {!isFirst && (
+            <AniLink fade to={prevPage} className={styles.link}>
+              prev
+            </AniLink>
+          )}
+
           {Array.from({ length: numPages }, (_, i) => {
             return (
               <AniLink
@@ -64,6 +78,11 @@ const BlogList = ({
               </AniLink>
             )
           })}
+          {!isLast && (
+            <AniLink fade to={nextPage} className={styles.link}>
+              next
+            </AniLink>
+          )}
         </section>
       </section>
     </Layout>

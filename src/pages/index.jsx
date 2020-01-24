@@ -9,6 +9,7 @@ import About from "../components/Home/About/About"
 import Services from "../components/Home/Services/Services"
 import StyledHero from "../components/StyledHero/StyledHero"
 import FeaturedTours from "../components/Tours/FeaturedTours/FeaturedTours"
+import SEO from "../components/SEO/SEO"
 
 export const query = graphql`
   query {
@@ -24,19 +25,21 @@ export const query = graphql`
 
 const index = ({ data }) => (
   <Layout>
-    <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
-      <Banner
-        title="Continue exploring"
-        info="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      >
-        <AniLink to="/tours" className="btn-white" fade>
-          explore tours
-        </AniLink>
-      </Banner>
-    </StyledHero>
-    <About />
-    <Services />
-    <FeaturedTours />
+    <SEO pageTitle="Home">
+      <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
+        <Banner
+          title="Continue exploring"
+          info="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        >
+          <AniLink to="/tours" className="btn-white" fade>
+            explore tours
+          </AniLink>
+        </Banner>
+      </StyledHero>
+      <About />
+      <Services />
+      <FeaturedTours />
+    </SEO>
   </Layout>
 )
 

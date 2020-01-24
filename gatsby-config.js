@@ -6,15 +6,15 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+const handle = "SarthakC"
 module.exports = {
   siteMetadata: {
     title: "BackRoads",
     description: "A travel website made with GatsbyJs.",
-    author: "@SarthakC",
-    data: {
-      name: "John",
-      age: 24,
-    },
+    author: handle,
+    twitter: handle,
+    image: "/defaultBcg.jpeg",
+    siteUrl: "https://vigorous-brown-054def.netlify.com",
   },
   plugins: [
     {
@@ -37,5 +37,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-playground`,
+    `gatsby-plugin-react-helmet`,
   ],
 }
