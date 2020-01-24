@@ -10,6 +10,7 @@ import StyledHero from "../../components/StyledHero/StyledHero.jsx"
 import Day from "../../components/SingleTour/Day/Day.jsx"
 
 import styles from "./template.module.css"
+import SEO from "../../components/SEO/SEO"
 
 export const query = graphql`
   query($slug: String!) {
@@ -51,6 +52,7 @@ const Template = ({
 }) => {
   return (
     <Layout>
+      <SEO title={name} />
       <StyledHero img={mainImage.fluid} />
       <section className={styles.template}>
         <div className={styles.center}>

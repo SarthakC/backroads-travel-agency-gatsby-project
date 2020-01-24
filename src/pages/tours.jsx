@@ -5,6 +5,7 @@ import PropTypes from "prop-types"
 import Layout from "../components/Layout/Layout"
 import StyledHero from "../components/StyledHero/StyledHero"
 import Tours from "../components/Tours/Tours/Tours"
+import SEO from "../components/SEO/SEO"
 
 export const query = graphql`
   query {
@@ -21,6 +22,7 @@ export const query = graphql`
 const tours = ({ data }) => {
   return (
     <Layout>
+      <SEO title="Tours" />
       <StyledHero img={data.defaultBcg.childImageSharp.fluid} />
       <Tours />
     </Layout>

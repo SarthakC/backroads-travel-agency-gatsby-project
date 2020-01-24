@@ -7,6 +7,7 @@ import BlogCard from "../../components/Blog/BlogCard/BlogCard"
 import Layout from "../../components/Layout/Layout"
 
 import styles from "../../components/Blog/BlogList/blog.module.css"
+import SEO from "../../components/SEO/SEO"
 
 export const query = graphql`
   query getPosts($skip: Int!, $limit: Int!) {
@@ -48,6 +49,7 @@ const BlogList = ({
 
   return (
     <Layout>
+      <SEO title="Blogs" />
       <section className={styles.blog}>
         <Title title="latest" subtitle="posts" />
         <div className={styles.center}>

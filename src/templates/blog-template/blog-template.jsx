@@ -6,6 +6,7 @@ import styles from "./single-blog.module.css"
 
 import Layout from "../../components/Layout/Layout"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import SEO from "../../components/SEO/SEO"
 
 export const query = graphql`
   query getPost($slug: String!) {
@@ -63,6 +64,7 @@ const Blog = ({
   }
   return (
     <Layout>
+      <SEO title={title} />
       <section className={styles.blog}>
         <div className={styles.center}>
           <h1>{title}</h1>
